@@ -87,10 +87,8 @@ form.addEventListener("submit",(e)=>{
     
     e.preventDefault()
     console.log(e)
-    if(searchList.style.display=="block"){
        searchList.style.display="none"
         searchList.innerText = ""
-    }else{
         result.innerHTML = loadingDot;
        setTimeout(async ()=>{
         const searchQuery = e.target.searchBox.value
@@ -99,5 +97,4 @@ form.addEventListener("submit",(e)=>{
         console.log(list)
         result.innerHTML = list[0].isValid?"It's a <span class='sub'>Sub</span ><span class='way'>Way</span>.":"It's a Cake.";
        }, 3000);
-    }
 })

@@ -2,7 +2,7 @@
 
   
 const searchHandler = async (searchQuery)=>{
-    const data =await (await fetch('https://github.com/Tanachuns/subway-or-cake/blob/main/script.js')).json()
+    const data =await (await fetch('./subway_branch_list.json')).json()
     const list = data.filter(item=>item.branch.includes(searchQuery))
     return list
 }

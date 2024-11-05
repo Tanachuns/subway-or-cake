@@ -96,6 +96,10 @@ form.addEventListener("submit",(e)=>{
         const list =  await searchHandler(searchQuery)
         list.filter(item=>item.branch==searchQuery)
         console.log(list)
-        result.innerHTML = list[0].isValid?"It's a <span class='sub'>Sub</span ><span class='way'>Way</span>.":"It's a Cake.";
+        if(list.length>0){
+            result.innerHTML = list[0].isValid?"It's a <span class='sub'>Sub</span ><span class='way'>Way</span>.":"It's a Cake.";
+        }else{
+            result.innerHTML = "Alas, that knowledge eludes me at this moment, like a shadow in the night. However, I am eager to assist you in your quest for understanding and will strive to uncover the answers you seek."
+        }
        }, 3000);
 })

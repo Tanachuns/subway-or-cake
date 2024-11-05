@@ -40,6 +40,10 @@ searchBox.addEventListener("input",async e=>{
                 searchBox.value = e.target.innerText
                 searchList.innerText = ""
                 searchList.style.display = "none"
+                form.dispatchEvent(new Event('submit', {
+                bubbles: true,
+                cancelable: true
+            }));
             })
             li.textContent = item.branch; 
             searchList.appendChild(li);
@@ -83,13 +87,10 @@ searchListEscape.addEventListener("click",()=>{
     index=-1
     searchListEscape.style.display = "none"
 })
-
-form.addEventListener("submit",(e)=>{
-    
+const fromHandler = (e)=>{
     e.preventDefault()
-    console.log(e)
-       searchList.style.display="none"
-        searchList.innerText = ""
+    searchList.style.display="none"
+    searchList.innerText = ""
         result.innerHTML = loadingDot;
        setTimeout(async ()=>{
         const searchQuery = e.target.searchBox.value
@@ -102,4 +103,6 @@ form.addEventListener("submit",(e)=>{
             result.innerHTML = "Alas, that knowledge eludes me at this moment, like a shadow in the night. However, I am eager to assist you in your quest for understanding and will strive to uncover the answers you seek."
         }
        }, 3000);
-})
+}
+
+form.addEventListener("submit",e=>fromHandler(e))

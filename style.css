@@ -67,6 +67,12 @@ kbd {
     
 }
 
+.btn{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
 #searchList{
     list-style-type:none;
     padding-left: 0;

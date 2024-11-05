@@ -77,7 +77,6 @@ kbd {
     padding: 1em 0;
     display: none;
     border-bottom-left-radius: 5px;border-bottom-right-radius: 5px;
-    overflow-y: scroll;
     
 }
 

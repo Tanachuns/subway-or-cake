@@ -26,6 +26,7 @@ searchBox.addEventListener("input",async e=>{
     const searchQuery = e.target.value
     searchList.style.display = "none"
     searchList.innerText = ""
+    result.innerHTML=""
     if(searchQuery){
         const list =  await searchHandler(e.target.value)
         if(list.length>0){
